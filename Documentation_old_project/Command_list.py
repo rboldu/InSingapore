@@ -1,0 +1,11 @@
+Co_ChangeStatus = 1
+Co_SetIntensity = 2
+Co_SetOn = 3
+Co_SetOff = 4
+Co_SetParameter = 5
+Co_Copy = 6
+Co_Paste = 7
+Co_Increase=8
+Co_Decrease =9
+Co_Parameter_Increase=10
+Co_Parameter_Decrease=11

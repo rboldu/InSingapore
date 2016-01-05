@@ -1,0 +1,54 @@
+#!/Users/issackelly/Projects/python/python-hue/env/bin/python
+
+from hue import Hue
+# import the module
+from pymouse import PyMouse
+from pymouse import PyMouseEvent
+from threading import Thread
+import time
+import socket
+import serial
+import sys
+
+class GeneralObject():
+
+    #this is just an example of how an object it should look
+    #Is missing all the initialitzation
+   
+    
+    def __init__(self):
+        self.status=0
+    def getId(self):
+        #returns the ID
+    def getWhoIm(self):
+        #returns what kind of object are
+    def changeStatus(self):
+        #here is going to change the status of the onject, example ON/OF
+    def setIntensity(self,intensity=100):
+        #Intensity it means like a potenciometer, if I have a light is going to be the brignest of the light
+        #de value of the intensity it shoud be between 0 and 255
+    def setOn(self):
+        #Turns on the device
+    def setOff(self):
+        #Turns off the device
+    def setParameter(self,parameter=100):
+        #This is going to be a caracteristinc, for example the color of the light also a value between 0 and 255
+    def getParameter(self):
+        #retunrs the parameter for example de color if its a light
+    def getStatus(self):
+
+    def copy(self):
+        return color[0,0,0,0]
+        #return status
+    def paste(self,data):
+        #do a paste of the object
+    def Increase(self,value=5):
+        #basicly brignes
+    def Decrease(self,value=5):
+        #basicly brignes
+
+    def Param_Increase(self,value=30):
+#increase color right now
+
+    def Param_Decrease(self,value=30):
+ #decrease de color right now
