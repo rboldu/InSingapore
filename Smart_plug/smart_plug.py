@@ -7,21 +7,38 @@ class smart_plug():
 	def __init__(self,ip,port):
 		self.ip=ip
 		self.port=port
+		#self.status=0
 		url.setIP(self.ip)
 		url.setPORT(self.port)
+
 		print 'Working'+self.ip+self.port
 
 	def SetID(self,id):
 		self.ID=id
 
+	def GetID(self):
+		return self.ID
+
 	def Category(self):
-		print 'Category'
+		return 'Category'
+
+	def GetStatus(self):
+		return self.status
+
+	def changeStatus(self):
+		if (self.status == 1):
+			self.OFF()
+		else:
+			self.ON()
 	
 	def ON(self):
 		url.on(self.ID)
+		self.staus=1
+		print self.status
 	
 	def OFF(self):
-		url.off(self.ID) 
+		url.off(self.ID)
+		self.status=0
 
 	def changeIP(self,ip):
 		url.changeIP(ip)

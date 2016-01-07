@@ -13,3 +13,9 @@ switch5.Category()
 switch4.ON()
 
 switch5.OFF()
+
+k=switch4.GetID()
+print k
+
+l=switch5.GetStatus()
+print l
