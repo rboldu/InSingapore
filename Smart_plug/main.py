@@ -10,12 +10,17 @@ switch5.SetID(5)
 
 switch5.Category()
 
-switch4.ON()
+switch4.OFF()
 
-switch5.OFF()
+switch5.ON()
 
-k=switch4.GetID()
+k=switch5.GetID()
 print k
 
-l=switch5.GetStatus()
+l=switch4.GetStatus()
 print l
+
+
+
+
+

@@ -19,10 +19,8 @@ class url():
 
 	def on(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=1" %(self.ip,self.port,id)
-		print http
-		#url_response = urllib2.urlopen(http)
+		url_response = urllib2.urlopen(http)
  
 	def off(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0" %(self.ip,self.port,id)
-		print http
-    	#url_response = urllib2.urlopen(http)
+		url_response = urllib2.urlopen(http)
