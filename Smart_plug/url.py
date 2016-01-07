@@ -17,10 +17,10 @@ class url():
 	def changePORT(self,set_port):
 		self.port=set_port
 
-	def on(self,id):
+	def setOn(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=1" %(self.ip,self.port,id)
 		url_response = urllib2.urlopen(http)
  
-	def off(self,id):
+	def setOff(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0" %(self.ip,self.port,id)
 		url_response = urllib2.urlopen(http)

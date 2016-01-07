@@ -11,30 +11,30 @@ class smart_plug():
 		url.setIP(self.ip)
 		url.setPORT(self.port)
 
-	def SetID(self,id):
+	def setId(self,id):
 		self.ID=id
 
-	def GetID(self):
+	def getId(self):
 		return self.ID
 
-	def Category(self):
+	def category(self):
 		return 'Category'
 
-	def GetStatus(self):
+	def getStatus(self):
 		return self.status
 
 	def changeStatus(self):
 		if (self.status == 1):
-			self.OFF()
+			self.setOff()
 		else:
-			self.ON()
+			self.setOn()
 	
-	def ON(self):
-		url.on(self.ID)
+	def setOn(self):
+		url.setOn(self.ID)
 		self.status = 1
 		
-	def OFF(self):
-		url.off(self.ID)
+	def setOff(self):
+		url.setOff(self.ID)
 		self.status = 0
 
 	def changeIP(self,ip):
