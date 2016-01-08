@@ -8,7 +8,7 @@ switch4.setId(4)
 switch5 = smart_plug(ip,port)
 switch5.setId(5)
 
-switch5.category()
+switch5.getWhoIm()
 
 switch4.setOff()
 
