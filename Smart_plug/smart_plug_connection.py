@@ -4,6 +4,8 @@ class Smart_plug_connection():
 	
 	def __init__(self):
 		print 'Working url'
+		self.ip='192.168.81.1'
+		self.port='3480'
 
 	def setIP(self,ip):
 		self.ip=ip
@@ -19,8 +21,10 @@ class Smart_plug_connection():
 
 	def setOn(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=1" %(self.ip,self.port,id)
-		url_response = urllib2.urlopen(http)
+		print http
+		#url_response = urllib2.urlopen(http)
  
 	def setOff(self,id):
 		http="http://%s:%s/data_request?id=lu_action&output_format=json&DeviceNum=%s&serviceId=urn:upnp-org:serviceId:SwitchPower1&action=SetTarget&newTargetValue=0" %(self.ip,self.port,id)
-		url_response = urllib2.urlopen(http)
+		print http
+		#url_response = urllib2.urlopen(http)
