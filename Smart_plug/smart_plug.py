@@ -7,8 +7,11 @@ class smart_plug():
 		self.ip=ip
 		self.port=port
 		self.status=0
+		self.intensity=0
+		self.category='Assign me in to a category'
 		Smart_plug_connection.setIP(self.ip)
 		Smart_plug_connection.setPORT(self.port)
+		self.setOff()
 
 	def setId(self,id):
 		self.ID=id
@@ -17,7 +20,10 @@ class smart_plug():
 		return self.ID
 
 	def getWhoIm(self):
-		return 'Type'
+		return self.category
+
+	def setCategory(self,category):
+		self.category=category
 
 	def getStatus(self):
 		return self.status
@@ -30,6 +36,9 @@ class smart_plug():
 
 	def setIntensity(self,intensity):
 		self.intensity=intensity
+
+	def getIntensity(self):
+		return self.intensity
 
 	def setParameter(self,parameter):
 		self.parameter=parameter
@@ -51,3 +60,12 @@ class smart_plug():
 	def changePORT(self,port):
 		Smart_plug_connection.changePORT(port)
 
+	def Increase(self,value):
+		self.intensity=self.intensity+value
+		if self.intensity>255:
+			self.intensity=255
+
+	def Decrease(self,value):
+		self.intensity=self.intensity-value
+		if self.intensity<0:
+			self.intensity=0

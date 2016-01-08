@@ -8,7 +8,7 @@ switch4.setId(4)
 switch5 = smart_plug(ip,port)
 switch5.setId(5)
 
-switch5.getWhoIm()
+switch4.setCategory('Light')
 
 switch4.setOff()
 
@@ -19,6 +19,17 @@ print k
 
 l=switch4.getStatus()
 print l
+
+switch4.setIntensity(20)
+
+switch4.Increase(50)
+
+p=switch4.getIntensity()
+print p
+
+j=switch4.getWhoIm()
+print j
+
 
 
 
