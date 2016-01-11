@@ -1,4 +1,4 @@
-from Smart_plug_connection import *
+from smart_plug_connection import *
 
 Smart_plug_connection=Smart_plug_connection()
 
@@ -11,12 +11,14 @@ class smart_plug():
 		self.category='Assign me in to a category'
 		Smart_plug_connection.setIP(self.ip)
 		Smart_plug_connection.setPORT(self.port)
-		self.setOff()
+		#self.setOff()
 
 	def setId(self,id):
 		self.ID=id
 
 	def getId(self):
+	
+
 		return self.ID
 
 	def getWhoIm(self):
