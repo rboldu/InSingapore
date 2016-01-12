@@ -1,4 +1,6 @@
 from smart_plug_connection import *
+from thread import *
+import time
 
 Smart_plug_connection=Smart_plug_connection()
 
@@ -17,8 +19,6 @@ class smart_plug():
 		self.ID=id
 
 	def getId(self):
-	
-
 		return self.ID
 
 	def getWhoIm(self):
@@ -62,12 +62,29 @@ class smart_plug():
 	def changePORT(self,port):
 		Smart_plug_connection.changePORT(port)
 
-	def Increase(self,value):
+	def Increase_val(self,value):
 		self.intensity=self.intensity+value
 		if self.intensity>255:
 			self.intensity=255
 
-	def Decrease(self,value):
+	def Decrease_val(self,value):
 		self.intensity=self.intensity-value
 		if self.intensity<0:
 			self.intensity=0
+
+	def Increase(self):
+		self.intensity=self.intensity+5
+		if self.intensity>255:
+			self.intensity=255
+
+	def Decrease(self):
+		self.intensity=self.intensity-5
+		if self.intensity<0:
+			self.intensity=0
+
+	def print_time(self,delay):
+		time.sleep(delay)
+		print 'testing 222'
+
+
+
