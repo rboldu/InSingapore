@@ -1,6 +1,4 @@
 from smart_plug_connection import *
-from thread import *
-import time
 
 Smart_plug_connection=Smart_plug_connection()
 
