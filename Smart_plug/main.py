@@ -39,10 +39,10 @@ for x in range(0, 3):
 p=switch4.getIntensity()
 print p
 
-thread.start_new_thread(switch4.print_time,(4,4))
+#thread.start_new_thread(switch4.print_time,(4,4))
 #switch4.thread.start_new_thread( switch4.print_time(4) )
 #   thread.start_new_thread( print_time, ("Thread-2", 4, ) )
-print 'testing 1 1 1'
+#print 'testing 1 1 1'
 
 
 
