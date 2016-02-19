@@ -62,12 +62,15 @@ class dali_connection():
 
 	def setOn(self,group):
 		command = '>V:%s,C:%s,G:%s,K:%s,B:%s,S:%s,F:%s#' %(self.version,self.command,group,self.constant_light,self.block,self.scene,self.fade_time)
-		#s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		#s.connect((self.ip, self.port))
-		#s.send(command)
-		#s.close()
-		print command
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s.connect((self.ip, self.port))
+		s.send(command)
+		s.close()
  
-	def setOff(self,id):
-		#off
-		print 'off'
+	def setOff(self,group):
+		self.scene=16
+		command = '>V:%s,C:%s,G:%s,K:%s,B:%s,S:%s,F:%s#' %(self.version,self.command,group,self.constant_light,self.block,self.scene,self.fade_time)
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s.connect((self.ip, self.port))
+		s.send(command)
+		s.close()

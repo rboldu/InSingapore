@@ -51,6 +51,24 @@ class dali_lights():
 	def changePORT(self,port):
 		dali_connection.changePORT(port)
 
+	def changeVersion(self,version):
+		dali_connection.changeVersion(version)
+
+	def changeCommand(self,command):
+		dali_connection.changeCommand(command)
+
+	def changeConstant_light(self,c_light):
+		dali_connection.changeConstant_light(c_light)
+
+	def changeBlock(self,block):
+		dali_connection.changeBlock(block)
+
+	def changeScene(self,scene):
+		dali_connection.changeScene(scene)
+
+	def changeFade_time(self,fade_time):
+		dali_connection.changeFade_time(fade_time)
+
 	def Increase_val(self,value):
 		self.intensity=self.intensity+value
 		if self.intensity>255:
