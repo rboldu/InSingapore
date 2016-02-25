@@ -62,11 +62,11 @@ class switch():
 		smart_plug_connection.setOff(self.ID)
 		self.status = 0
 
-	def Increase_val(self,value):
+	def Param_Increase(self,value=30):
 		smart_plug_connection.setOn(self.ID)
 		self.status = 1
 
-	def Decrease_val(self,value):
+	def Param_Decrease(self,value=30):
 		smart_plug_connection.setOff(self.ID)
 		self.status = 0
 
@@ -78,5 +78,8 @@ class switch():
 		smart_plug_connection.setOff(self.ID)
 		self.status = 0
 
-	def print_time(self,delay):
-		time.sleep(delay)
+	def copy(self):
+        return -1
+        
+    def paste(self,data):
+        return -1
