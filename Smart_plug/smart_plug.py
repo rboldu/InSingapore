@@ -1,6 +1,6 @@
 from smart_plug_connection import *
 
-Smart_plug_connection=Smart_plug_connection()
+smart_plug_connection=smart_plug_connection()
 
 class smart_plug():
 	def __init__(self,ip,port):
@@ -9,8 +9,8 @@ class smart_plug():
 		self.status=0
 		self.intensity=0
 		self.category='Assign me in to a category'
-		Smart_plug_connection.setIP(self.ip)
-		Smart_plug_connection.setPORT(self.port)
+		smart_plug_connection.setIP(self.ip)
+		smart_plug_connection.setPORT(self.port)
 		#self.setOff()
 
 	def setId(self,id):
@@ -47,18 +47,18 @@ class smart_plug():
 		return self.parameter
 
 	def setOn(self):
-		Smart_plug_connection.setOn(self.ID)
+		smart_plug_connection.setOn(self.ID)
 		self.status = 1
 		
 	def setOff(self):
-		Smart_plug_connection.setOff(self.ID)
+		smart_plug_connection.setOff(self.ID)
 		self.status = 0
 
 	def changeIP(self,ip):
-		Smart_plug_connection.changeIP(ip)
+		smart_plug_connection.changeIP(ip)
 
 	def changePORT(self,port):
-		Smart_plug_connection.changePORT(port)
+		smart_plug_connection.changePORT(port)
 
 	def Increase_val(self,value):
 		self.intensity=self.intensity+value
