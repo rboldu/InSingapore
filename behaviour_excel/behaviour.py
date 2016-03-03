@@ -40,5 +40,7 @@ class Behaviour_excel():
 		for i in range(rows_B):
 			if (data_B[i][0]==control_action):
 				self.row_number=i
-
-		return data_B[self.row_number][1]
+		if not data_B[self.row_number][1]:
+			print 'wrong entry!'
+		else:
+			return data_B[self.row_number][1]
