@@ -1,10 +1,12 @@
 from smart_plug_connection import *
+import time
 
 smart_plug_connection=smart_plug_connection()
 
-class smart_plug():
-	def __init__(self,ip,port):
+class switch():
+	def __init__(self,ip,port,id):
 		self.ip=ip
+		self.ID=id
 		self.port=port
 		self.status=0
 		self.intensity=0
@@ -12,9 +14,6 @@ class smart_plug():
 		smart_plug_connection.setIP(self.ip)
 		smart_plug_connection.setPORT(self.port)
 		#self.setOff()
-
-	def setId(self,id):
-		self.ID=id
 
 	def getId(self):
 		return self.ID
@@ -29,19 +28,28 @@ class smart_plug():
 		return self.status
 
 	def changeStatus(self):
-		if (self.status == 1):
+		if (self.status==1):
 			self.setOff()
 		else:
 			self.setOn()
 
 	def setIntensity(self,intensity):
-		self.intensity=intensity
+		if(intensity>128):
+			smart_plug_connection.setOn(self.ID)
+			self.status = 1
+		else:
+			smart_plug_connection.setOff(self.ID)
+			self.status = 0
 
 	def getIntensity(self):
-		return self.intensity
+		if(self.status==1):
+			return '255'
+		else:
+			return '0'
 
 	def setParameter(self,parameter):
-		self.parameter=parameter
+		print "no parameter option"
+		#self.parameter=parameter
 
 	def getParameter(self):
 		return self.parameter
@@ -54,35 +62,24 @@ class smart_plug():
 		smart_plug_connection.setOff(self.ID)
 		self.status = 0
 
-	def changeIP(self,ip):
-		smart_plug_connection.changeIP(ip)
+	def Param_Increase(self,value=30):
+		smart_plug_connection.setOn(self.ID)
+		self.status = 1
 
-	def changePORT(self,port):
-		smart_plug_connection.changePORT(port)
-
-	def Increase_val(self,value):
-		self.intensity=self.intensity+value
-		if self.intensity>255:
-			self.intensity=255
-
-	def Decrease_val(self,value):
-		self.intensity=self.intensity-value
-		if self.intensity<0:
-			self.intensity=0
+	def Param_Decrease(self,value=30):
+		smart_plug_connection.setOff(self.ID)
+		self.status = 0
 
 	def Increase(self):
-		self.intensity=self.intensity+5
-		if self.intensity>255:
-			self.intensity=255
+		smart_plug_connection.setOn(self.ID)
+		self.status = 1
 
 	def Decrease(self):
-		self.intensity=self.intensity-5
-		if self.intensity<0:
-			self.intensity=0
+		smart_plug_connection.setOff(self.ID)
+		self.status = 0
 
-	def print_time(self,delay):
-		time.sleep(delay)
-		print 'testing 222'
-
-
-
+	def copy(self):
+        return -1
+        
+    def paste(self,data):
+        return -1
