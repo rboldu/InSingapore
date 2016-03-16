@@ -7,9 +7,6 @@ class dali_connection():
 		self.port='50000'
 		self.version='1'
 		self.command='13'
-		#self.constant_light='1'
-		#self.block='1'
-		#self.scene='1'
 		self.level='0'
 		self.fade_time='1'
 
@@ -62,7 +59,6 @@ class dali_connection():
 		self.fade_time=change_fade_time
 
 	def setOn(self,id):
-		#command = '>V:%s,C:%s,G:%s,K:%s,B:%s,S:%s,F:%s#' %(self.version,self.command,id,self.constant_light,self.block,self.scene,self.fade_time)
 		self.level=100
 		command = '>V:%s,C:%s,G:%s,L:%s,F:%s#' %(self.version,self.command,id,self.level,self.fade_time)
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
