@@ -3,15 +3,19 @@ from dali_connection import *
 dali_connection=dali_connection()
 
 class dali_lights():
-	def __init__(self,dali_ip,dali_port):
+	def __init__(self,dali_ip,dali_port,id):
+		self.id=id
 		self.ip=dali_ip
 		self.port=dali_port
-		self.group='Assign me in to a group'
+		self.intensity=0
 		dali_connection.setIP(self.ip)
 		dali_connection.setPORT(self.port)
 
-	def getGroup(self):
-		return self.group
+	def getId(self):
+		print self.id
+
+	def getWhoIm(self):
+		return 'Dali lights'
 
 	def setGroup(self,group):
 		self.group=group
@@ -38,11 +42,11 @@ class dali_lights():
 		return self.parameter
 
 	def setOn(self):
-		dali_connection.setOn(self.group)
+		dali_connection.setOn(self.id)
 		self.status = 1
 		
 	def setOff(self):
-		dali_connection.setOff(self.group)
+		dali_connection.setOff(self.id)
 		self.status = 0
 
 	def changeIP(self,ip):
@@ -69,22 +73,36 @@ class dali_lights():
 	def changeFade_time(self,fade_time):
 		dali_connection.changeFade_time(fade_time)
 
-	def Increase_val(self,value):
+	def Param_Increase(self,value=30):
 		self.intensity=self.intensity+value
 		if self.intensity>255:
 			self.intensity=255
+		self.setOn()
+		self.status = 1
 
-	def Decrease_val(self,value):
+	def Param_Decrease(self,value=30):
 		self.intensity=self.intensity-value
 		if self.intensity<0:
 			self.intensity=0
+		self.setOff()
+		self.status = 0
 
 	def Increase(self):
 		self.intensity=self.intensity+5
 		if self.intensity>255:
 			self.intensity=255
+		self.setOn()
+		self.status = 1
 
 	def Decrease(self):
 		self.intensity=self.intensity-5
 		if self.intensity<0:
 			self.intensity=0
+		self.setOff()
+		self.status = 0
+
+	def copy(self):
+		return -1
+	
+	def paste(self,data):
+		return -1
